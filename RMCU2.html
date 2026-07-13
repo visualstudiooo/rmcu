@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabi Medical Care Unit (RMCU) - Healing with Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary: #007680;
+            --primary-dark: #004d54;
+            --secondary: #ff5252;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* --- NAVBAR & LOGO --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), #00b4d8);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 118, 128, 0.3);
+        }
+
+        .logo-icon i {
+            color: var(--white);
+            font-size: 24px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .logo-text h1 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+            color: var(--secondary);
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-top: -2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-appointment {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(0, 118, 128, 0.2);
+        }
+
+        .btn-appointment:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION --- */
+        #home {
+            padding: 160px 20px 100px 20px;
+            background: linear-gradient(135deg, #e6f2f3 0%, #ffffff 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            line-height: 1.2;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .hero-content h2 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-box {
+            background: var(--white);
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary);
+        }
+
+        .stat-box h3 {
+            font-size: 24px;
+            color: var(--primary-dark);
+        }
+
+        .stat-box p {
+            margin-bottom: 0;
+            font-size: 13px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* --- ABOUT US --- */
+        #about {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        /* Enhanced profile frame rules for your portrait asset */
+        .about-img img {
+            width: 100%;
+            height: auto;
+            max-height: 550px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .founder-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .founder-badge h4 {
+            color: var(--secondary);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .founder-badge p {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .about-content h4 {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        .punchline {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--primary);
+            font-style: italic;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--secondary);
+            padding-left: 15px;
+        }
+
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .vm-box {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .vm-box:hover {
+            transform: translateY(-5px);
+            background: #eef7f8;
+        }
+
+        .vm-box i {
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .vm-box h3 {
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+        }
+
+        .developer-tag {
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .developer-tag strong {
+            color: var(--primary-dark);
+        }
+
+        /* --- FACILITIES SECTION --- */
+        #facilities {
+            padding: 100px 20px;
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-title h4 {
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary-dark);
+        }
+
+        .facilities-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .facility-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .facility-img {
+            height: 230px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .facility-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .facility-card:hover .facility-img img {
+            transform: scale(1.08);
+        }
+
+        .facility-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 118, 128, 0.9);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+        }
+
+        .facility-info {
+            padding: 25px;
+        }
+
+        .facility-info h3 {
+            font-size: 22px;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .facility-info h3 i {
+            color: var(--primary);
+        }
+
+        .facility-info p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .facility-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .facility-features span {
+            background: #f1f5f6;
+            color: var(--primary-dark);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* --- CONTACT & FOOTER --- */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 20px 20px 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 50px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+        }
+
+        .footer-about .logo-text h1 {
+            color: var(--white);
+        }
+
+        .footer-about p {
+            color: #a5c2c5;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: #a5c2c5;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #a5c2c5;
+            font-size: 14px;
+        }
+
+        .footer-contact p i {
+            color: var(--secondary);
+            font-size: 18px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            font-size: 13px;
+            color: #a5c2c5;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 992px) {
+            .hero-container, .about-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-image {
+                order: -1;
+            }
+            .about-img {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .founder-badge {
+                right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-content h2 {
+                font-size: 36px;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <i class="uil uil-heart-medical"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>RMCU</h1>
+                    <span>Rabi Medical Care Unit</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#facilities">Facilities & Labs</a></li>
+                <li><a href="#contact" class="btn-appointment">Emergency Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h2>Your Health Is Our <span>Ultimate Mission</span> & Passion.</h2>
+                <p>Welcome to Rabi Medical Care Unit (RMCU). We offer world-class medical treatments equipped with breakthrough technologies. Designed to bring harmony, top-tier clinical operations, and immediate response care closer to you.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <h3>24/7</h3>
+                        <p>Emergency Care</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>99.9%</h3>
+                        <p>Lab Accuracy</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>50+</h3>
+                        <p>Expert Consultants</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&q=80&w=800" alt="RMCU State-of-the-art Medical Center">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="about-img">
+                <img src="your-image-url.jpg" alt="Chairman Sir Rabi ul Ghous">
+                <div class="founder-badge">
+                    <h4>Chairman & Founder</h4>
+                    <p>Sir Rabi ul Ghous</p>
+                </div>
+            </div>
+            <div class="about-content">
+                <h4>About Our Institution</h4>
+                <h2>Setting New Standards in Advanced Medical Sciences</h2>
+                <p class="punchline">"At RMCU, we don't just treat symptoms; we heal lives with unconditional empathy, unmatched medical accuracy, and global excellence."</p>
+                <p>Rabi Medical Care Unit (RMCU) stands as a monument of hope and health. We deliver highly customized treatments addressing complex clinical criteria seamlessly under one roof.</p>
+                
+                <div class="vision-mission">
+                    <div class="vm-box">
+                        <i class="uil uil-eye"></i>
+                        <h3>Our Vision</h3>
+                        <p>To lead healthcare evolution dynamically and ensure no life is left uncompromised due to technological absence.</p>
+                    </div>
+                    <div class="vm-box">
+                        <i class="uil uil-target"></i>
+                        <h3>Our Mission</h3>
+                        <p>Bridging state-of-the-art medical operations with accessible affordability for immediate multi-disciplinary recovery.</p>
+                    </div>
+                </div>
+
+                <div class="developer-tag">
+                    <i class="uil uil-brackets-curly" style="color: var(--secondary)"></i>
+                    <p>Architected & Powered digitally by <strong>RUG Developers</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="facilities">
+        <div class="section-title">
+            <h4>What We Provide</h4>
+            <h2>Our Specialized Facilities & Advanced Departments</h2>
+        </div>
+
+        <div class="facilities-grid">
+            
+            <div class="facility-card">
+                <div class="facility-img">
+                    <span class="facility-tag">Critical Care</span>
+                    <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=800" alt="Advanced Operation Theater">
+                </div>
+                <div class="facility-info">
+                    <h3><i class="uil uil-medical-drip"></i> Operation Theaters</h3>
+                    <p>Ultra-clean, modern laminar airflow operation theaters configured dynamically for highly critical cardiothoracic, orthopedic, and general surgical interventions.</p>
+                    <div class="facility-features">
+                        <span>Laminar Flow</span>
+                        <span>Robotic-ready</span>
+                        <span>24/7 Trauma Assist</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-img">
+                    <span class="facility-tag">Brain & Spine</span>
+                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800" alt="Neurology Center Lab">
+                </div>
+                <div class="facility-info">
+                    <h3><i class="uil uil-brain"></i> Neurology Center</h3>
+                    <p>Pioneering neurological mapping, stroke management modules, and complex spinal reconstruction guided by specialized elite micro-neurosurgery units.</p>
+                    <div class="facility-features">
+                        <span>EEG / EMG Diagnostic</span>
+                        <span>Stroke Unit</span>
+                        <span>Neuro ICU</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-img">
+                    <span class="facility-tag">Ophthalmology</span>
+                    <img src="https://images.unsplash.com/photo-1579684389782-64d84b5e901a?auto=format&fit=crop&q=80&w=800" alt="Eye Care Department">
+                </div>
+                <div class="facility-info">
+                    <h3><i class="uil uil-eye-dropper"></i> Eye Centers</h3>
+                    <p>Advanced diagnostic lasers and computer-assisted precision instruments handling advanced cataract surgeries, premium lens refractions, and retinal care.</p>
+                    <div class="facility-features">
+                        <span>Lasik Surgery</span>
+                        <span>Glaucoma Screening</span>
+                        <span>Retina Care</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-img">
+                    <span class="facility-tag">Out-Patient Care</span>
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800" alt="OPD Section Clinic">
+                </div>
+                <div class="facility-info">
+                    <h3><i class="uil uil-accessible"></i> Modern OPD Section</h3>
+                    <p>Smoothly streamlined, multi-specialty Out-Patient Departments handling primary checks, swift diagnostic pathways, and specialized consultant guidance.</p>
+                    <div class="facility-features">
+                        <span>Zero Wait Time Plan</span>
+                        <span>Multi-Consultant</span>
+                        <span>E-Prescriptions</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-img">
+                    <span class="facility-tag">Diagnostics</span>
+                    <img src="https://images.unsplash.com/photo-1579165466541-74e2b4969954?auto=format&fit=crop&q=80&w=800" alt="Pathology Laboratory Testing">
+                </div>
+                <div class="facility-info">
+                    <h3><i class="uil uil-flask"></i> Comprehensive Lab Suite</h3>
+                    <p>Fully robotic biochemistry analyzers, pathology arrays, and rapid hematology testing units guaranteeing unparalleled precision diagnostics.</p>
+                    <div class="facility-features">
+                        <span>Biochemistry Lab</span>
+                        <span>Pathology Array</span>
+                        <span>Barcode Security</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="facility-card">
+                <div class="facility-img">
+                    <span class="facility-tag">Advanced Imaging</span>
+                    <img src="https://images.unsplash.com/photo-1616391182219-e080b4d1043a?auto=format&fit=crop&q=80&w=800" alt="MRI / Radiology Machine">
+                </div>
+                <div class="facility-info">
+                    <h3><i class="uil uil-heartbeat"></i> Radiology Center</h3>
+                    <p>Next-generation 3T MRI, high-slice CT scanners, and 4D color ultrasound arrays delivering crisp and immediate underlying diagnostic views.</p>
+                    <div class="facility-features">
+                        <span>3T Open MRI</span>
+                        <span>128-Slice CT Scan</span>
+                        <span>Low Radiation X-Ray</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="logo" style="margin-bottom: 15px;">
+                    <div class="logo-icon">
+                        <i class="uil uil-heart-medical"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>RMCU</h1>
+                        <span style="color: var(--secondary)">Rabi Medical Care Unit</span>
+                    </div>
+                </div>
+                <p>Bringing premium, error-free clinical healthcare services down to Earth. Designed carefully by RUG Developers under the stellar guidance of Chairman Sir Rabi ul Ghous.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Navigation</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#facilities">Facilities & Departments</a></li>
+                    <li><a href="#facilities">Pathology Labs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Emergency Contact desk</h3>
+                <p><i class="uil uil-phone"></i> +1 (800) 456-RMCU (7628)</p>
+                <p><i class="uil uil-envelope"></i> emergency@rmcu.medical.org</p>
+                <p><i class="uil uil-location-point"></i> 777 Medical Care Boulevard, RMCU Complex</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Rabi Medical Care Unit (RMCU). All Rights Reserved. Crafted diligently by <strong>RUG Developers</strong>.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
